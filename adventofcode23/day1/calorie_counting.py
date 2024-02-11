@@ -28,12 +28,8 @@ def part1_find_elf_with_most_calories():
 
 def part2_find_top_three_elfs():
     part2_elfs = calculate_total_calories_from_input()
-    first_elf = max(part2_elfs)
-    part2_elfs.remove(first_elf)
-    second_elf = max(part2_elfs)
-    part2_elfs.remove(second_elf)
-    third_elf = max(part2_elfs)
-    return first_elf + second_elf + third_elf
+    part2_elfs.sort()
+    return part2_elfs[0] + part2_elfs[1] + part2_elfs[2]
 
 
 if __name__ == '__main__':
