@@ -25,8 +25,15 @@ def extract_strategy_guide_from_input() -> List[ShapeChoicePair]:
         return shape_choice_pairs
 
 
-def determine_shape(shape_str_representation: str):
+def determine_shape(shape_str_representation: str) -> Shape:
+    """
+    Uses the string representation of the shapes in the input to convert them to internal objects representing the
+    corresponding shapes.
+    :param shape_str_representation: the string representation of the shape in the input file
+    :return: Shape object that corresponds to the shape_str_representation
+    """
     match shape_str_representation:
+        # A = Rock for predicted move, X = Rock for recommended move. Same pattern for other shapes.
         case "A" | "X":
             return Shape.ROCK
         case "B" | "Y":
